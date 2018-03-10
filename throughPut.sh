@@ -119,7 +119,7 @@ python plot-normalized-ipc.py new.csv --title "Threads 4 Size x/64 IPC" -y "Inst
 
 #Threads 8 Size x/64
 echo Running Threads 8 size x/64
-sudo perf stat -D 5 -I 100 -e L1-dcache-load-misses,l2_rqsts.miss,branch-misses,branch-instructions,instructions,mem_load_uops_retired.l3_miss,cpu-cycles,LLC-load-misses -x, -o output.csv python runThreads.py -t 8 --program "python throughPutRun.py -s "
+sudo perf stat -D 5 -I 100 -e L1-dcache-load-misses,l2_rqsts.miss,branch-misses,branch-instructions,instructions,mem_load_uops_retired.l3_miss,cpu-cycles,LLC-load-misses -x, -o output.csv python runThreads.py -t 8 --program "python throughPutRun.py -s 64"
 python interval-normalize.py output.csv --output new.csv
 python plot-normalized-mpki.py new.csv --title "Threads 8 Size x/64 MPKI" -y "Misses per 1000 Instructions" --output "Thread-8-Size-64-mpki.png"
 python plot-normalized-ipc.py new.csv --title "Threads 8 Size x/64 IPC" -y "Instructions per Cycles" --output "Thread-8-Size-64-ipc.png"

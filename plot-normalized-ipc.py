@@ -55,7 +55,6 @@ for x, y in zip(columns['cpu-cycles'],columns['instructions']):
 	value = float(y)/float(x)
         IPC.append(value)
 
-print columns
 plt.plot(timestamps,IPC,'b-',label='IPC')
 plt.xlabel('Time (seconds)')
 plt.ylabel(args.ylabel)	#plt.ylabel('Instructions per cycle')

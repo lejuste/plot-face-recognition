@@ -83,9 +83,9 @@ for row, ts, cpunum in zip(out, times, cpus):
     #print('row'+str(row))
     row1 = [r.replace('<not counted>','0') for r in row]
     if('<not counted>' in row):
-        print 'hur: '+str(row)
+        #print 'hur: '+str(row)
        
-    #    continue
+        continue
     #print('row'+str(row1))
     writer.writerow([ts] +
                 ([cpunum] if cpu is not None else []) +
