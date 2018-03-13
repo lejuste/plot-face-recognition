@@ -1,0 +1,16 @@
+# started on Sat Mar 10 17:30:11 2018
+
+
+ Performance counter stats for 'python latencyPie.py --input 28.jpg':
+
+       1467.423272      task-clock (msec)         #    0.999 CPUs utilized          
+                14      context-switches          #    0.010 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+            32,393      page-faults               #    0.022 M/sec                  
+     4,515,512,304      cycles                    #    3.077 GHz                    
+    10,182,907,056      instructions              #    2.26  insn per cycle         
+     1,934,313,516      branches                  # 1318.170 M/sec                  
+        16,939,195      branch-misses             #    0.88% of all branches        
+
+       1.468436225 seconds time elapsed
+

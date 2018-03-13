@@ -1,13 +1,30 @@
 #!/bin/bash
 touch times.txt
-for i in {1..25}
+
+
+
+declare -a arr=("1.jpg" "2.jpg" "3.jpg" "4.jpg" "5.jpg" "6.jpg" "7.jpg" "8.jpg" "9.jpg" "10.jpeg" "11.jpeg" "12.jpeg" "13.jpeg" "14.jpeg" "15.jpeg" "16.jpeg" "17.jpeg" "18.jpeg" "19.jpeg" "20.jpeg" "21.jpeg" "22.jpeg" "23.jpeg" "24.jpeg" "25.jpeg" "26.jpeg" "27.jpeg" "28.jpeg" "29.jpeg" "30.jpeg")
+
+## now loop through the above array
+for i in "${arr[@]}"
 do
-    echo python latencyPie.py --size $i
-    sudo perf stat -o out.txt python latencyPie.py --size $i
+    echo python latencyPie.py --input $i
+    sudo perf stat -o out.txt python latencyPie.py --input $i
     cat out.txt >> times.txt
+   # or do whatever with individual element of the array
 done
 
-cat times.txt | grep 'time'
+
+
+
+#for i in {1..25}
+#do
+#    echo python latencyPie.py --size $i
+#    sudo perf stat -o out.txt python latencyPie.py --size $i
+#    cat out.txt >> times.txt
+#done
+
+#cat times.txt | grep 'time'
 
 
 
